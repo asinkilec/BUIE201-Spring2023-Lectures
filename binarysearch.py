@@ -56,6 +56,6 @@ def binary_search_recursive2(arr, x, low, high):
         return binary_search_recursive2(arr, x, midindex + 1, high)
 
 
-import timeit
+#import timeit
 
-print (timeit.timeit("search_iterative1([i for i in range(10000)], 99999)", number=100, setup="from __main__ import search_iterative1") / 100)
+#print (timeit.timeit("search_iterative1([i for i in range(10000)], 99999)", number=100, setup="from __main__ import search_iterative1") / 100)
