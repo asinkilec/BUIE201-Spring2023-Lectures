@@ -5,7 +5,7 @@ pygame.init()
 class House:
     def __init__(self):
         self._animals = []
-        #self._animals.append(Cat(1, 1))
+        self._animals.append(Cat(1, 1))
         self._animals.append(Mouse(1, 1))
         self._animals.append(Mouse(1, 1))
 
@@ -15,10 +15,10 @@ class House:
                 if event.type == pygame.QUIT: 
                     self.quit()
 
-            self.timeTick()
+            self._timeTick()
             self._clock.tick()
 
-    def timeTick(self):
+    def _timeTick(self):
         for a in self._animals:
             a.move()
 
@@ -40,21 +40,19 @@ class Animal:
     def move(self):
         pass
 
+    def die(self):
+        pass    
+
     def are_you_a_target_at_location(self, x, y):
         return False
     
     def check_if_you_caught(self, a):
         return False
 
-
 class Mouse(Animal):
     def __init__(self, x, y):
          super().__init__(x, y)
          
-
-    def die(self):
-        pass
-
     def are_you_a_target_at_location(self, x, y):
         return self._x == x and self._y == y
 
